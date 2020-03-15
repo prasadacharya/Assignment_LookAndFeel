@@ -1,0 +1,173 @@
+<html>
+<head>
+    <title>Agriculture Expenses</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/chartsLoader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['State', 'Farm expense'],
+                ['California', 6926469],
+                ['Florida', 1065834],
+                ['Georgia', 3635704],
+                ['New York', 1189349],
+                ['Texas', 7961228]
+            ]);
+
+            var options = {
+                title: 'Farm-origin expenses by State',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+    }
+    </script>
+</head >
+<body>
+
+    <div id="container">
+        <div id="mainpic">
+            <h1>Agriculture<span class="off">Expenses</span></h1>
+            <h2>Farm and Labor</h2>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a href="index.html">Home</a></li>
+                <li class="menuitem"><a href="Farm.html">Farm Expenses</a></li>
+                <li class="menuitem"><a href="Labor.html">Labor Expenses</a></li>
+                <li class="menuitem"><a href="About.html">About us</a></li>
+
+            </ul>
+        </div>
+
+        <div id="content">
+            <h3 class="table-title">
+                State wise farm expenses in $1,000. Farm-origin expenses include Feed, Livestock - poultry purchases and Seed purchases.
+            </h3>
+
+            <table class="tables">
+                <tbody>
+                    <tr>
+                        <th>
+                            State
+                        </th>
+                        <th>
+                            Farm-origin expenses
+                        </th>
+                        <th>
+                            Feed
+                        </th>
+                        <th>
+                            Livestock and poultry purchases
+                        </th>
+                        <th>
+                            Seed purchases
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            California
+                        </td>
+                        <td>
+                            6,926,469
+                        </td>
+                        <td>
+                            4,500,000
+                        </td>
+                        <td>
+                            936,469
+                        </td>
+                        <td>
+                            1,490,000
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Florida
+                        </td>
+                        <td>
+                            1,065,834
+                        </td>
+                        <td>
+                            510,000
+                        </td>
+                        <td>
+                            60,834
+                        </td>
+                        <td>
+                            495,000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Georgia
+                        </td>
+                        <td>
+                            3,635,704
+                        </td>                      
+                        <td>
+                            2,260,000
+                        </td>
+                        <td>
+                            1,030,704
+                        </td>
+                        <td>
+                            345,000
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            1,189,349
+                        </td>
+                        <td>
+                            838,311
+                        </td>
+                        <td>
+                            76,024
+                        </td>
+                        <td>
+                            275,014
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Texas
+                        </td>
+                        <td>
+                            7,961,228
+                        </td>
+                        <td>
+                            4,750,000
+                        </td>
+                        <td>
+                            2,361,228
+                        </td>
+                        <td>
+                            850,000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="piechart" style="width: 100%; height: 500px; display:inline-block;"></div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+
+</body>
+</html >

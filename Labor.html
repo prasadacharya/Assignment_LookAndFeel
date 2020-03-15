@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title>Agriculture Expenses</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/chartsLoader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawVisualization);
+
+        function drawVisualization() {
+            // Some raw data 
+            var data = google.visualization.arrayToDataTable([
+                ['State', 'California', 'Florida', 'Georgea', 'New York', 'Texas'],
+                ['Cash', 10131876, 1536061, 526579, 643290, 2043907]/*,
+                ['Contract', 3616628, 249411, 158559, 25507, 285484],
+                ['Hired', 6515248, 1286650, 368019, 617784, 1758423]*/
+            ]);		
+
+            var options = {
+                title: 'Cash Labor expenses by State',
+                vAxis: { title: 'Labor expenses' },
+                hAxis: { title: 'State' },
+                seriesType: 'bars',
+                series: { 5: { type: 'line' } }
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="mainpic">
+            <h1>Agriculture<span class="off">Expenses</span></h1>
+            <h2>Farm and Labor</h2>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a href="index.html">Home</a></li>
+                <li class="menuitem"><a href="Farm.html">Farm Expenses</a></li>
+                <li class="menuitem"><a href="Labor.html">Labor Expenses</a></li>
+                <li class="menuitem"><a href="About.html">About us</a></li>
+
+            </ul>
+        </div>
+
+        <div id="content">
+            <h3 class="table-title">State wise labor expenses in $1,000. Cash labor is the sum of Contract labor and Hired labor</h3>
+
+            <table class="tables">
+                <tbody>
+                    <tr>
+
+                        <th>
+                            State
+                        </th>
+                        <th>
+                            Cash labor
+                        </th>
+                        <th>
+                            Contract labor
+                        </th>
+                        <th>
+                            Hired labor
+                        </th>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            California
+                        </td>
+                        <td>
+                            10,131,876
+                        </td>
+                        <td>
+                            3,616,628
+                        </td>
+                        <td>
+                            6,515,248
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Florida
+                        </td>
+                        <td>
+                            1,536,061
+
+                        </td>
+                        <td>
+                            249,411
+                        </td>
+                        <td>
+                            1,286,650
+                        </td>
+                    </tr>
+                    <tr>
+
+
+                        <td>
+                            Georgia
+                        </td>
+                        <td>
+                            526,579
+
+                        </td>
+                        <td>
+                            158,559
+                        </td>
+                        <td>
+                            368,019
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            643,290
+                        </td>
+                        <td>
+                            25,507
+                        </td>
+                        <td>
+                            617,784
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Texas
+                        </td>
+                        <td>
+                            2,043,907
+
+                        </td>
+                        <td>
+                            285,484
+                        </td>
+                        <td>
+                            1,758,423
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+
+
+</body>
+</html>
